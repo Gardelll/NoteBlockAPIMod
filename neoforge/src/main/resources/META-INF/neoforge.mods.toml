@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+#issueTrackerURL = ""
+license = "LGPL-3.0"
+
+[[mods]]
+modId = "noteblockapi"
+version = "${version}"
+displayName = "NoteBlockAPI"
+authors = "xxmicloxx, michidk, koca2000, Luck, Gardelll"
+description = '''
+a developer interface to play nbs-files ingame
+'''
+#logoFile = ""
+
+[[dependencies.noteblockapi]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.0,)"
+ordering = "NONE"
+side = "SERVER"
+
+[[dependencies.noteblockapi]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21,)"
+ordering = "NONE"
+side = "SERVER"
