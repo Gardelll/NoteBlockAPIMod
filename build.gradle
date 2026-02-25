@@ -59,6 +59,7 @@ subprojects {
         publications {
             mavenJava(MavenPublication) {
                 artifactId = base.archivesName.get()
+                description = "NoteBlockAPI"
                 from components.java
             }
         }
@@ -69,7 +70,14 @@ subprojects {
             // Notice: This block does NOT have the same function as the block in the top level.
             // The repositories here will be used for publishing your artifact, not for
             // retrieving dependencies.
-            mavenLocal()
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/Gardelll/NoteBlockAPIMod")
+                credentials {
+                    username = System.getenv("USERNAME")
+                    password = System.getenv("TOKEN")
+                }
+            }
         }
     }
 }
