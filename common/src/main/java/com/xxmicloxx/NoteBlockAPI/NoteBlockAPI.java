@@ -9,6 +9,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.thread.NamedThreadFactory;
 import net.minecraft.world.entity.player.Player;
 import org.slf4j.Logger;
@@ -142,7 +143,11 @@ public class NoteBlockAPI {
 	}
 
 	public boolean isDisabling() {
-		return !GameInstance.getServer().isRunning();
+		MinecraftServer server = GameInstance.getServer();
+		if  (server == null) {
+			return true;
+		}
+		return !server.isRunning();
 	}
 
 	public static NoteBlockAPI getAPI(){
