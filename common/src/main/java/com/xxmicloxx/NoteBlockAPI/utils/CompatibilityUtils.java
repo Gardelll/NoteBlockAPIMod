@@ -145,7 +145,7 @@ public class CompatibilityUtils {
 
     private static void playSound0(Player player, Vec3 pos, String sound, SoundCategory category, float volume, float pitch, long seed) {
         if (player instanceof ServerPlayer sp && pos != null && sound != null && category != null) {
-            playSound0(sp, pos, Holder.direct(SoundEvent.createVariableRangeEvent(ResourceLocation.parse(sound))), SoundSource.valueOf(category.name()), volume, pitch, seed);
+            playSound0(sp, pos, Holder.direct(SoundEvent.createVariableRangeEvent(ResourceLocation.tryParse(sound))), SoundSource.valueOf(category.name()), volume, pitch, seed);
         }
     }
 

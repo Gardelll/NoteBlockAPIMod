@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[4,)"
+loaderVersion = "[47,)"
 #issueTrackerURL = ""
 license = "LGPL-3.0"
 
@@ -14,15 +14,22 @@ a developer interface to play nbs-files ingame
 #logoFile = ""
 
 [[dependencies.noteblockapi]]
-modId = "neoforge"
-type = "required"
-versionRange = "[21.0,)"
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
 ordering = "NONE"
 side = "SERVER"
 
 [[dependencies.noteblockapi]]
 modId = "minecraft"
-type = "required"
-versionRange = "[1.21,)"
+mandatory = true
+versionRange = "[1.20.1,)"
 ordering = "NONE"
+side = "SERVER"
+
+[[dependencies.noteblockapi]]
+modId = "architectury"
+mandatory = true
+versionRange = "[9.2.14,)"
+ordering = "AFTER"
 side = "SERVER"
