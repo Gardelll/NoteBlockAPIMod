@@ -78,6 +78,14 @@ subprojects {
                     password = System.getenv("TOKEN")
                 }
             }
+            maven {
+                name = "GardelNexus"
+                url = uri("https://nexus.gardel.top/repository/maven-releases")
+                credentials {
+                    username = System.getenv("MAVEN_USERNAME")
+                    password = System.getenv("MAVEN_PASSWORD")
+                }
+            }
         }
     }
 }
